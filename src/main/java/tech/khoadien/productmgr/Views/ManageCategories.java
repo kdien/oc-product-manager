@@ -51,7 +51,7 @@ public class ManageCategories {
     public static void update() {
         int id;
         while (true) {
-            id = Console.getInt("Enter category ID to update (enter -1 to cancel this operation): ");
+            id = ConsoleInput.getInt("Enter category ID to update (enter -1 to cancel this operation): ");
 
             if (id == -1) {
                 System.out.println("Operation cancelled." + NEW_LINE);
@@ -96,7 +96,7 @@ public class ManageCategories {
     public static void delete() {
         int id;
         while (true) {
-            id = Console.getInt("Enter category ID to delete (enter -1 to cancel this operation): ");
+            id = ConsoleInput.getInt("Enter category ID to delete (enter -1 to cancel this operation): ");
 
             if (id == -1) {
                 System.out.println("Operation cancelled." + NEW_LINE);
@@ -121,7 +121,7 @@ public class ManageCategories {
         String newName;
 
         while (true) {
-            newName = Console.getLine("Enter new category name (enter -1 to cancel this operation): ").trim();
+            newName = ConsoleInput.getLine("Enter new category name (enter -1 to cancel this operation): ").trim();
 
             if (isUniqueName(newName))
                 break;

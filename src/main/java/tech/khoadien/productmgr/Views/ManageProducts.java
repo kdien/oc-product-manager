@@ -33,7 +33,7 @@ public class ManageProducts {
 
         if (input.equalsIgnoreCase("y")) {
             while (true) {
-                categoryId = Console.getInt("Enter category ID to filter products displayed (enter 0 to show list of valid categories): ");
+                categoryId = ConsoleInput.getInt("Enter category ID to filter products displayed (enter 0 to show list of valid categories): ");
 
                 if (isValidCategoryId(categoryId))
                     break;
@@ -76,13 +76,13 @@ public class ManageProducts {
             return;
         }
 
-        String description = Console.getLine("Enter description: ").trim();
+        String description = ConsoleInput.getLine("Enter description: ").trim();
         if (description.equals("-1")) {
             System.out.println("Operation cancelled." + NEW_LINE);
             return;
         }
 
-        double price = Console.getDouble("Enter price: ");
+        double price = ConsoleInput.getDouble("Enter price: ");
         if (price == -1) {
             System.out.println("Operation cancelled." + NEW_LINE);
             return;
@@ -112,7 +112,7 @@ public class ManageProducts {
 
         int id;
         while (true) {
-            id = Console.getInt("Enter product ID to update: ");
+            id = ConsoleInput.getInt("Enter product ID to update: ");
 
             if (id == -1) {
                 System.out.println("Operation cancelled." + NEW_LINE);
@@ -141,13 +141,13 @@ public class ManageProducts {
             return;
         }
 
-        String description = Console.getLine("Enter description: ").trim();
+        String description = ConsoleInput.getLine("Enter description: ").trim();
         if (description.equals("-1")) {
             System.out.println("Operation cancelled." + NEW_LINE);
             return;
         }
 
-        double price = Console.getDouble("Enter price: ");
+        double price = ConsoleInput.getDouble("Enter price: ");
         if (price == -1) {
             System.out.println("Operation cancelled." + NEW_LINE);
             return;
@@ -180,7 +180,7 @@ public class ManageProducts {
     public static void delete() {
         int id;
         while (true) {
-            id = Console.getInt("Enter product ID to delete (enter -1 to cancel this operation): ");
+            id = ConsoleInput.getInt("Enter product ID to delete (enter -1 to cancel this operation): ");
 
             if (id == -1) {
                 System.out.println("Operation cancelled." + NEW_LINE);
@@ -205,7 +205,7 @@ public class ManageProducts {
         String newCode;
 
         while (true) {
-            newCode = Console.getString("Enter new product code: ").trim();
+            newCode = ConsoleInput.getString("Enter new product code: ").trim();
 
             if (isUniqueProductCode(newCode))
                 break;
@@ -222,7 +222,7 @@ public class ManageProducts {
         int newCategoryId;
 
         while (true) {
-            newCategoryId = Console.getInt("Enter category ID (enter 0 to show list of valid categories): ");
+            newCategoryId = ConsoleInput.getInt("Enter category ID (enter 0 to show list of valid categories): ");
 
             if (newCategoryId == -1)
                 return -1;

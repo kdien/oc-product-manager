@@ -13,7 +13,7 @@ public class Main {
         displayMainMenu();
 
         while (true) {
-            int selection = Console.getInt("Enter your selection: ");
+            int selection = ConsoleInput.getInt("Enter your selection: ");
 
             if (selection == 1) {
                 manageCategories();
@@ -77,7 +77,7 @@ public class Main {
         int selection = -1;
 
         while (selection != 0) {
-            selection = Console.getInt("Enter your selection: ");
+            selection = ConsoleInput.getInt("Enter your selection: ");
 
             switch (selection) {
                 case 1:
@@ -117,7 +117,7 @@ public class Main {
         int selection = -1;
 
         while (selection != 0) {
-            selection = Console.getInt("Enter your selection: ");
+            selection = ConsoleInput.getInt("Enter your selection: ");
 
             switch (selection) {
                 case 1:

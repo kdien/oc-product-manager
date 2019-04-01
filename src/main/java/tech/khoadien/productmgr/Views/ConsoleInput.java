@@ -2,7 +2,7 @@ package tech.khoadien.productmgr.Views;
 
 import java.util.Scanner;
 
-public class Console {
+public class ConsoleInput {
 
     private static Scanner sc = new Scanner(System.in);
 
