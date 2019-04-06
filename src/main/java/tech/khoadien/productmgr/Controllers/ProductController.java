@@ -11,10 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Represents a controller that connects to the database and returns requested data on the products
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class ProductController {
 
     private Connection connection;
 
+    /**
+     * Get a list of products from the database, optionally filtered by a category if specified
+     * @param categoryId optional ID of a category to filter the products returned
+     * @return a collection of Product objects representing the products requested
+     */
     public List<Product> getList(Optional<Integer> categoryId) {
         connection = DbConnection.getConnection();
 
@@ -52,6 +62,11 @@ public class ProductController {
         }
     }
 
+    /**
+     * Get a product from the database
+     * @param id the product ID requested
+     * @return a Product object representing the product with a matching ID
+     */
     public Product get(int id) {
         connection = DbConnection.getConnection();
 
@@ -86,6 +101,11 @@ public class ProductController {
         }
     }
 
+    /**
+     * Add a new product to the database
+     * @param product a Product object with properties to be added
+     * @return true if successfully added, false if error occurred
+     */
     public boolean add(Product product) {
         connection = DbConnection.getConnection();
 
@@ -106,6 +126,11 @@ public class ProductController {
         }
     }
 
+    /**
+     * Delete a product from the database
+     * @param product a Product object representing the record to be deleted
+     * @return true if successfully deleted, false if error occurred
+     */
     public boolean delete(Product product) {
         connection = DbConnection.getConnection();
 
@@ -123,6 +148,11 @@ public class ProductController {
         }
     }
 
+    /**
+     * Update/Edit a product in the database
+     * @param product a Product object representing the record to be updated
+     * @return true if successfully updated, false if error occurred
+     */
     public boolean update(Product product) {
         connection = DbConnection.getConnection();
 

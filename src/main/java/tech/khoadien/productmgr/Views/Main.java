@@ -1,5 +1,10 @@
 package tech.khoadien.productmgr.Views;
 
+/**
+ * Main class with application's entry point and menus
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class Main {
 
     private static final String NEW_LINE = System.getProperty("line.separator");

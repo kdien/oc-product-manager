@@ -10,10 +10,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a controller that connects to the database and returns requested data on the categories
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class CategoryController {
 
     private Connection connection;
 
+    /**
+     * Get a list of all categories from the database
+     * @return a collection of Category objects representing all the categories
+     */
     public List<Category> getList() {
         connection = DbConnection.getConnection();
 
@@ -42,6 +51,11 @@ public class CategoryController {
         }
     }
 
+    /**
+     * Get a category from the database
+     * @param id the category ID requested
+     * @return a Category object representing the category with a matching ID
+     */
     public Category get(int id) {
         connection = DbConnection.getConnection();
 
@@ -70,6 +84,11 @@ public class CategoryController {
         }
     }
 
+    /**
+     * Add a new category to the database
+     * @param category a Category object with properties to be added
+     * @return true if successfully added, false if error occurred
+     */
     public boolean add(Category category) {
         connection = DbConnection.getConnection();
 
@@ -87,6 +106,11 @@ public class CategoryController {
         }
     }
 
+    /**
+     * Delete a category from the database
+     * @param category a Category object representing the record to be deleted
+     * @return true if successfully deleted, false if error occurred
+     */
     public boolean delete(Category category) {
         connection = DbConnection.getConnection();
 
@@ -104,6 +128,11 @@ public class CategoryController {
         }
     }
 
+    /**
+     * Update/Edit a category in the database
+     * @param category a Category object representing the record to be updated
+     * @return true if successfully updated, false if error occurred
+     */
     public boolean update(Category category) {
         connection = DbConnection.getConnection();
 

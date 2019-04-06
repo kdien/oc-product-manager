@@ -2,6 +2,11 @@ package tech.khoadien.productmgr.Models;
 
 import java.text.NumberFormat;
 
+/**
+ * Represents a product in the database
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class Product {
 
     private int id;
@@ -57,6 +62,10 @@ public class Product {
         return price;
     }
 
+    /**
+     * Get currency-formatted price
+     * @return a String representing the product price in currency format
+     */
     public String getPriceFormatted() {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         return currency.format(price);

@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * A handy utility to print out data to command line in table format
- * https://www.logicbig.com/how-to/code-snippets/jcode-java-cmd-command-line-table.html
+ * Source: https://www.logicbig.com/how-to/code-snippets/jcode-java-cmd-command-line-table.html
  */
 public class CommandLineTable {
 

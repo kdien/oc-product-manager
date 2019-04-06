@@ -1,5 +1,10 @@
 package tech.khoadien.productmgr.Models;
 
+/**
+ * Represents a category in the database
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class Category {
 
     private int id;

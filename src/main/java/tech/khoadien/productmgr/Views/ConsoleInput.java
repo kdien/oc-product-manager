@@ -2,6 +2,10 @@ package tech.khoadien.productmgr.Views;
 
 import java.util.Scanner;
 
+/**
+ * Contains methods for prompting user input in the console and validates it
+ * @author Murach's Java Programming
+ */
 public class ConsoleInput {
 
     private static Scanner sc = new Scanner(System.in);

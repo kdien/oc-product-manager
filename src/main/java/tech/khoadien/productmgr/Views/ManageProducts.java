@@ -9,12 +9,20 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+/**
+ * Manages input and output for Product-related operations
+ * @author Khoa Dien
+ * @version 1.0
+ */
 public class ManageProducts {
 
     private static final String NEW_LINE = System.getProperty("line.separator");
     private static ProductController productController = new ProductController();
     private static CategoryController categoryController = new CategoryController();
 
+    /**
+     * Print out a table showing product records from the database, optionally filtered by a category if specified
+     */
     public static void display() {
         Scanner sc = new Scanner(System.in);
         String input;
@@ -66,6 +74,9 @@ public class ManageProducts {
         }
     }
 
+    /**
+     * Add a new product
+     */
     public static void add() {
         System.out.println(NEW_LINE + "Add a new product.");
         System.out.println("At any prompt, enter -1 to cancel this operation." + NEW_LINE);
@@ -106,6 +117,9 @@ public class ManageProducts {
             System.out.println(NEW_LINE + "Error! Unable to add product." + NEW_LINE);
     }
 
+    /**
+     * Update/edit an existing product
+     */
     public static void update() {
         System.out.println(NEW_LINE + "Update a product.");
         System.out.println("At any prompt, enter -1 to cancel this operation." + NEW_LINE);
@@ -177,6 +191,9 @@ public class ManageProducts {
         }
     }
 
+    /**
+     * Delete an existing product
+     */
     public static void delete() {
         int id;
         while (true) {
@@ -201,6 +218,11 @@ public class ManageProducts {
             System.out.println(NEW_LINE + "Error! Unable to delete product." + NEW_LINE);
     }
 
+    /**
+     * Prompt for input for new product code
+     * @param product optional Product object representing an existing product in case of updating
+     * @return a valid new product code
+     */
     private static String getNewCode(Optional<Product> product) {
         String newCode;
 
@@ -218,6 +240,10 @@ public class ManageProducts {
         return newCode;
     }
 
+    /**
+     * Prompt for input for new category ID
+     * @return a valid category ID
+     */
     private static int getNewCategoryId() {
         int newCategoryId;
 
@@ -238,6 +264,11 @@ public class ManageProducts {
         return newCategoryId;
     }
 
+    /**
+     * Check if a product ID exists in the database
+     * @param id ID to be checked
+     * @return true if id exists, false otherwise
+     */
     private static boolean isValidProductId(int id) {
         List<Product> products = productController.getList(Optional.empty());
         for (Product product : products) {
@@ -247,6 +278,11 @@ public class ManageProducts {
         return false;
     }
 
+    /**
+     * Check if a product code has never been used in the database
+     * @param code product code to be checked
+     * @return true if code is unique, false otherwise
+     */
     private static boolean isUniqueProductCode(String code) {
         List<Product> products = productController.getList(Optional.empty());
         for (Product product : products) {
@@ -256,6 +292,11 @@ public class ManageProducts {
         return true;
     }
 
+    /**
+     * Check if a category ID exists in the database
+     * @param id ID to be checked
+     * @return true if id exists, false otherwise
+     */
     private static boolean isValidCategoryId(int id) {
         List<Category> categories = categoryController.getList();
         for (Category category : categories) {
