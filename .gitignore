@@ -36,3 +36,19 @@ buildNumber.properties
 
 ### IntelliJ IDEA ###
 .idea/
+*.iml
+
+### Eclipse IDE ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
